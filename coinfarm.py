@@ -12,7 +12,9 @@ from selenium.webdriver.support.ui import WebDriverWait
 Login = True
 coins = False
 
-browser = webdriver.Firefox()
+options = Options()
+options.headless = True
+browser = webdriver.Firefox(options=options)
 browser.get("URL")
 
 while Login == True:
@@ -32,6 +34,7 @@ while Login == True:
     time.sleep(120)
 
 while coins == True:
-    browser.find_element_by_class_name(
-        "tw-transition tw-transition--exit-done tw-transition__fade tw-transition__fade--exit-done").click()
+    browser.find_element_by_xpath(
+        "/html/body/div[1]/div/div[2]/div[2]/div[2]/div/div[1]/div/div/div/div/div/section/div/div[5]/div[2]/div[2]/div[1]/div/div/div/div[2]/div/div/div/button").click()
+    print("coins getet")
     time.sleep(900)
